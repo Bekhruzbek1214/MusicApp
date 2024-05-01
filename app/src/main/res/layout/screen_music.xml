@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFF"
+    tools:context="com.example.musicapp.presenter.screen.MusicScreen">
+
+    <View
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_option_ripple"
+        android:contentDescription="@string/app_name"
+        android:padding="5dp"
+        android:src="@drawable/bottom"
+        app:layout_constraintBottom_toBottomOf="@id/bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/btn_fav"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:background="@drawable/bg_option_ripple"-->
+<!--        android:contentDescription="@string/app_name"-->
+<!--        android:padding="5dp"-->
+<!--        android:src="@drawable/favorite"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/bar"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/box_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bar">
+
+        <ImageView
+            android:id="@+id/music_img"
+            android:layout_width="300dp"
+            android:layout_height="356dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/music_app_image" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/music_name"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="40dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Unsayable"
+        android:textStyle="bold"
+        android:textColor="#171C26"
+        android:textSize="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box_img" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Charlie Puth"
+        android:textColor="#171C26"
+        android:textSize="16dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/music_name" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:max="100"
+        android:progress="0"
+        android:progressBackgroundTint="#111"
+        android:progressTint="#111"
+        android:thumbTint="#111"
+        app:layout_constraintBottom_toTopOf="@id/btns_manage"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="00:00"
+        android:textColor="#111"
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="@id/seek_bar"
+        app:layout_constraintTop_toBottomOf="@id/seek_bar" />
+
+    <TextView
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:text="00:00"
+        android:textColor="#111"
+        android:textSize="15dp"
+        app:layout_constraintRight_toRightOf="@id/seek_bar"
+        app:layout_constraintTop_toBottomOf="@id/seek_bar" />
+
+    <LinearLayout
+        android:id="@+id/btns_manage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/prev"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/bg_ripple_next_prew"
+            android:padding="8dp"
+            android:src="@drawable/preview"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/play_pause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="15dp"
+            android:src="@drawable/pause_circle_svgrepo_com"
+            android:tag="play" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/bg_ripple_next_prew"
+            android:padding="8dp"
+            android:src="@drawable/next"
+             />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
